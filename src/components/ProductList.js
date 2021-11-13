@@ -5,17 +5,14 @@ import { Context } from '..';
 import ProductItem from './ProductItem';
 
 const ProductList = observer(() => {
-    const {product} = useContext(Context)
-    return (
-        <Row className="d-flex"
-        
-        
-        >
-            {product.products.map(product =>
-                <ProductItem key={product.id} product={product}/>
-            )}
+  const { product } = useContext(Context);
+  return (
+    <Row className='d-flex'>
+      {product.products.map((product) => (
+        <ProductItem key={product.id} product={product} />
+      ))}
     </Row>
-    );
+  );
 });
 
 export default ProductList;

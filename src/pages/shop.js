@@ -5,19 +5,19 @@ import ProductList from '../components/ProductList';
 import TypeBar from '../components/TypeBar';
 
 const Shop = () => {
-    return (
-        <Container>
-            <Row className="mt-4">
-                <Col md={3}>
-<TypeBar/>
-                </Col>
-                <Col md={9}>
-                    <BrandBar />
-                    <ProductList/>
-                    </Col>
-        </Row>
+  return (
+    <Container>
+      <Row className='mt-4'>
+        <Col md={3}>
+          <TypeBar />
+        </Col>
+        <Col md={9}>
+          <BrandBar />
+          <ProductList />
+        </Col>
+      </Row>
     </Container>
-    );
+  );
 };
 
 export default Shop;
