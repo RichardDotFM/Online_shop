@@ -1,13 +1,14 @@
 import React from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, CloseButton } from 'react-bootstrap';
 
 const CreateType = ({ show, onHide }) => {
   return (
-    <Modal show={show} onClick={onHide} size='lg' centered>
-      <Modal.Header closeButton>
+    <Modal show={show} size='lg' centered>
+      <Modal.Header>
         <Modal.Title id='contained-modal-title-vcenter'>
           Добавить тип
         </Modal.Title>
+        <CloseButton onClick={onHide} />
       </Modal.Header>
       <Modal.Body>
         <Form>

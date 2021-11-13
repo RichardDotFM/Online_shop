@@ -1,35 +1,46 @@
-import React, { useContext } from 'react';
-import { Modal, Button, Form, Dropdown } from 'react-bootstrap';
+import React, { useContext, useState } from 'react';
+import { Modal, Button, Form, Dropdown, CloseButton } from 'react-bootstrap';
 import { Context } from '../..';
 
 const CreateProduct = ({ show, onHide }) => {
   const { product } = useContext(Context);
+  const [type, setType] = useState('');
+  const [brand, setBrand] = useState('');
+
   return (
-    <Modal show={show} onClick={onHide} size='lg' centered>
-      <Modal.Header closeButton>
+    <Modal show={show} size='lg' centered>
+      <Modal.Header>
         <Modal.Title id='contained-modal-title-vcenter'>
           Добавить товар
         </Modal.Title>
+        <CloseButton onClick={onHide} />
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Dropdown autoClose={false}>
+          <Dropdown autoClose={true}>
             <Dropdown.Toggle variant='success' id='dropdown-basic'>
-              Выберите тип{' '}
+              {type !== '' ? type : 'Выберите тип'}
             </Dropdown.Toggle>
             <Dropdown.Menu>
               {product.types.map((type) => (
-                <Dropdown.Item key={type.id}>{type.name}</Dropdown.Item>
+                <Dropdown.Item key={type.id} onClick={() => setType(type.name)}>
+                  {type.name}
+                </Dropdown.Item>
               ))}
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown className='mt-3'>
             <Dropdown.Toggle variant='success' id='dropdown-basic'>
-              Выберите бренд{' '}
+              {brand !== '' ? brand : 'Выберите бренд'}
             </Dropdown.Toggle>
             <Dropdown.Menu>
               {product.brands.map((brand) => (
-                <Dropdown.Item key={brand.id}>{brand.name}</Dropdown.Item>
+                <Dropdown.Item
+                  key={brand.id}
+                  onClick={() => setBrand(brand.name)}
+                >
+                  {brand.name}
+                </Dropdown.Item>
               ))}
             </Dropdown.Menu>
           </Dropdown>
