@@ -1,23 +1,27 @@
-import { observer } from 'mobx-react-lite';
-import React, { useContext } from 'react';
-import { Context } from '..';
-import { ListGroup } from 'react-bootstrap';
+import { observer } from "mobx-react-lite";
+import React, { useContext } from "react";
+import { Context } from "..";
+import {  ListGroup} from "react-bootstrap";
 
 const TypeBar = observer(() => {
   const { product } = useContext(Context);
   return (
-    <ListGroup>
-      {product.types.map((type) => (
-        <ListGroup.Item
-          style={{ cursor: 'pointer' }}
-          active={type.id === product.selectedType.id}
-          onClick={() => product.setSelectedType(type)}
-          key={type.id}
-        >
-          {type.name}
-        </ListGroup.Item>
+    <ListGroup className="mt-4">
+
+    
+      {product.types.map((type ) => (
+          <ListGroup.Item
+              style={{cursor: 'pointer'}}
+              active={type.id === product.selectedType.id}
+              onClick={() => product.setSelectedType(type)}
+              key={type.id}
+          >
+              {type.name}
+          </ListGroup.Item>
       ))}
-    </ListGroup>
+    
+      </ListGroup>
+      
   );
 });
 
