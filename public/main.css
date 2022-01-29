@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+
+body {
+background-color: #FFFCF9; 
+font-family: "sans";
+font-weight: 300;
+font-size: 16px;
+color: #6d435a;
+
+-webkit-font-smoothink: antialiased;
+-webkit-overflow-scrolling: touch;
+
+
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+font-family: sans-serif;
+font-weight: 300;
+color: #352d39;
+}
+
+p {
+line-height: 28px;
+margin-bottom: 25px;
+}
+
+.centered {
+    text-align: center;
+}
+
+a {
+    color: #60cac1;
+}
+
+a:hover, a:focus {
+    color: indigo;
+    text-decoration: none;
+    outline: 0ch;
+}
+
+button {
+    background-color: khaki;
+    color: hotpink;
+}
